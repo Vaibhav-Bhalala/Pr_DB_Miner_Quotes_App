@@ -1,26 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'Views/Screens/details_page.dart';
-import 'Views/Screens/home_page.dart';
+import 'package:get_storage/get_storage.dart';
+import 'Controller/theme_controller.dart';
+import 'Views/Screens/category_page.dart';
+import 'Views/Screens/favourite_screen.dart';
 import 'Views/Screens/intro_screen.dart';
+import 'Views/Screens/quotes_details_page.dart';
+import 'Views/Screens/quotes_list_page.dart';
 import 'Views/Screens/splash.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences preferences = await SharedPreferences.getInstance();
-  bool isvisited = preferences.getBool("isIntroVisited") ?? false;
+  await GetStorage.init();
+  final ThemeController _themeController = Get.put(ThemeController());
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true),
-      initialRoute: (isvisited) ? 'Splash' : '/',
-      routes: {
-        '/': (ctx) => intro_page(),
-        'Splash': (ctx) => Splash(),
-        'home_page': (ctx) => home_page(),
-        'details': (ctx) => details(),
-      },
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: _themeController.themeMode.value,
+      initialRoute: "/",
+      getPages: [
+        GetPage(
+          name: "/",
+          page: () => IntroPage(),
+        ),
+        GetPage(
+          name: "/splash",
+          page: () => const SplashScreen(),
+        ),
+        GetPage(
+          name: "/Homepage",
+          page: () => const HomePage(),
+        ),
+        GetPage(
+          name: "/second",
+          page: () => const second_page(),
+        ),
+        GetPage(
+          name: "/edit",
+          page: () => const Edit_page(),
+        ),
+        GetPage(
+          name: "/FvtScreen",
+          page: () => const FvtScreen(),
+        ),
+      ],
     ),
   );
 }

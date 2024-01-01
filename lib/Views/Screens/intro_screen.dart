@@ -1,83 +1,185 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:introduction_screen/introduction_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
+import 'package:get/get.dart';
 
-class intro_page extends StatefulWidget {
-  const intro_page({super.key});
+class IntroPage extends StatefulWidget {
+  const IntroPage({super.key});
 
   @override
-  State<intro_page> createState() => _intro_pageState();
+  State<IntroPage> createState() => _IntroPageState();
 }
 
-class _intro_pageState extends State<intro_page> {
+class _IntroPageState extends State<IntroPage> {
+  final Color kDarkBlueColor = const Color(0xFF053149);
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: IntroductionScreen(
-        pages: [
-          PageViewModel(
-            title: "Push Notification",
-            body:
-            "Get notification as soon as someone post a new quote on their wall",
-            image: Center(
-              child: Container(
-                height: double.infinity,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                        image:
-                        AssetImage("lib/Views/Utils/Assets/Images/intro1.jpg"),
-                        fit: BoxFit.cover)),
+    return CupertinoPageScaffold(
+      child: OnBoardingSlider(
+        finishButtonText: 'Start',
+        onFinish: () {
+          Get.toNamed('/splash');
+        },
+        finishButtonStyle: FinishButtonStyle(
+          // backgroundColor: kDarkBlueColor,
+          backgroundColor: Colors.red,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)),
+        ),
+        skipTextButton: Text(
+          'Skip',
+          style: TextStyle(
+            fontSize: 16,
+            color: kDarkBlueColor,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        trailing: const Text(
+          'Skip',
+          style: TextStyle(
+            fontSize: 16,
+            color: Colors.red,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        trailingFunction: () {
+          Get.offNamedUntil('/splash', (route) => route.isFirst);
+        },
+        controllerColor: Colors.red,
+        // controllerColor: kDarkBlueColor,
+        totalPage: 3,
+        headerBackgroundColor: Colors.white,
+        pageBackgroundColor: Colors.white,
+
+        background: [
+          Image.asset(
+            'assets/bgimages/everything-will-be-ok.png',
+            height: 400,
+          ),
+          Image.asset(
+            'assets/bgimages/wake-up-and-smile.png',
+            height: 375,
+          ),
+          Image.asset(
+            'assets/bgimages/growing.png',
+            height: 370,
+          ),
+        ],
+        speed: 1.8,
+        pageBodies: [
+          Container(
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width,
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 480,
+                  ),
+                  Text(
+                    'On your way...',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: kDarkBlueColor,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    'to find the perfect looking Onboarding for your app?',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black26,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
-          PageViewModel(
-            title: "Make it happen",
-            body:
-            "Follow your favourite entrepreneur to Listen to their podcast and quotes",
-            image: Center(
-              child: Container(
-                height: double.infinity,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage("lib/Views/Utils/Assets/Images/intro2.jpg"),
-                    fit: BoxFit.cover,
+          Container(
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width,
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 480,
                   ),
-                ),
+                  Text(
+                    'You’ve reached your destination.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: kDarkBlueColor,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    'Sliding with animation',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black26,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
-          PageViewModel(
-            title: "Svae favourite Quotes",
-            body:
-            "Now you can save your most favourite quotes and see them later on ",
-            image: Center(
-              child: Container(
-                height: double.infinity,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image:AssetImage("lib/Views/Utils/Assets/Images/intro3.jpg"),
-                    fit: BoxFit.cover,
+          Container(
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width,
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 480,
                   ),
-                ),
+                  Text(
+                    'Start now!',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: kDarkBlueColor,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    'Where everything is possible and customize your onboarding.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black26,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
         ],
-        done: Text("done"),
-        onDone: () async {
-          SharedPreferences preferences = await SharedPreferences.getInstance();
-          preferences.setBool("isIntroVisited", true);
-          Navigator.pushReplacementNamed(context, 'Splash');
-        },
-        next: Text("Next"),
-        showNextButton: true,
       ),
     );
   }

@@ -1,39 +1,28 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class Splash extends StatefulWidget {
-  const Splash({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<Splash> createState() => _SplashState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashState extends State<Splash> {
-  @override
+class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    Timer(
-      Duration(seconds: 5),
-          () {
-        Navigator.pushReplacementNamed(context, 'home_page');
-      },
-    );
+    Timer(const Duration(seconds: 4), () {
+      Get.offNamed("/Homepage");
+    });
     return Scaffold(
-      backgroundColor: Colors.black,
       body: Center(
-        child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(
-                  "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Big_Splash.gif/640px-Big_Splash.gif"),
-              fit: BoxFit.cover,
-            ),
-          ),
+        child: Image.asset(
+          "assets/quotesbg.gif",
         ),
       ),
+      backgroundColor: Colors.white70,
     );
   }
 }

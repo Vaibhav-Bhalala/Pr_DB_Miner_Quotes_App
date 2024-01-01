@@ -1,13 +1,16 @@
-import 'dart:typed_data';
+class CategoryDatabaseModel {
+  int id;
+  String category_name;
 
-class category {
-  int? id;
-  String name;
-  String image;
+  CategoryDatabaseModel({
+    required this.id,
+    required this.category_name,
+  });
 
-  category({required this.name, required this.image, required this.id});
-
-  factory category.sql({required Map data}) {
-    return category(name: data['name'], image: data['image'], id: data['id']);
+  factory CategoryDatabaseModel.formMap({required Map data}) {
+    return CategoryDatabaseModel(
+      id: data['id'],
+      category_name: data['category_name'],
+    );
   }
 }

@@ -1,12 +1,11 @@
-class jsonmodel {
-  int id;
-  String category;
-  List quotes;
+import 'package:quotes_db_miner_pr/Models/quotes_model.dart';
 
-  jsonmodel({required this.id, required this.category, required this.quotes});
+class LocalJsonModel {
+  String jsonData;
+  List<QuotesModel> Quotes;
 
-  factory jsonmodel.json({required Map data}) {
-    return jsonmodel(
-        id: data['id'], category: data['category'], quotes: data['quotes']);
-  }
+  LocalJsonModel({
+    required this.jsonData,
+    required this.Quotes,
+  });
 }
