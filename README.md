@@ -112,3 +112,15 @@ Submission: Once you have completed your project and uploaded it to your GitHub 
 submit the GitHub repository link to your instructor or as instructed. Double-check that your
 repository is properly organized and includes all the required files, screenshots, GIFs, and APK
 files as per the instructions provided.
+
+<img src="https://github.com/Vaibhav-Bhalala/Pr_DB_Miner_Quotes_App/assets/122871366/07fcc0b1-aee8-4ab4-9d07-bae55d6573c3" width="250px">
+<img src="https://github.com/Vaibhav-Bhalala/Pr_DB_Miner_Quotes_App/assets/122871366/c18c0cd0-6956-4577-ae05-ec0ae36a8516" width="250px">
+<img src="https://github.com/Vaibhav-Bhalala/Pr_DB_Miner_Quotes_App/assets/122871366/3583a601-1ce5-448e-8e7b-ca1bccac7689" width="250px">
+<img src="https://github.com/Vaibhav-Bhalala/Pr_DB_Miner_Quotes_App/assets/122871366/2710e36f-30b1-4e64-bf41-2a26dc5be63f" width="250px">
+<img src="https://github.com/Vaibhav-Bhalala/Pr_DB_Miner_Quotes_App/assets/122871366/d89b7663-e5b0-4311-b205-55efcfea8469" width="250px">
+<img src="https://github.com/Vaibhav-Bhalala/Pr_DB_Miner_Quotes_App/assets/122871366/9f14f442-8508-4507-93dd-4d842ccd85ac" width="250px">
+<img src="https://github.com/Vaibhav-Bhalala/Pr_DB_Miner_Quotes_App/assets/122871366/3d0e3d2e-bf32-4e16-b2d9-5f2e2d455695" width="250px">
+<img src="https://github.com/Vaibhav-Bhalala/Pr_DB_Miner_Quotes_App/assets/122871366/d3ea0bff-8012-4d91-b0a1-88c616663e4d" width="250px">
+<img src="https://github.com/Vaibhav-Bhalala/Pr_DB_Miner_Quotes_App/assets/122871366/200838f4-b64e-495f-9bbd-e04a4b48e936" width="250px">
+<img src="https://github.com/Vaibhav-Bhalala/Pr_DB_Miner_Quotes_App/assets/122871366/f527f26c-eb83-4025-bd38-f820f02d538f" width="250px">
+
